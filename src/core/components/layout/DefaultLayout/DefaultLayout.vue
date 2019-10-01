@@ -27,22 +27,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "./../../../scss/variables";
 
-  #default-layout {
-    height: $default-layout-height;
-    display: flex;
-    flex-direction: column;
-
-    #menu-content-wrapper {
-      display: flex;
-      flex: 1;
-      overflow: hidden;
-
-      #content{
-        flex: 1;
-        overflow: auto;
-      }
-    }
-  }
 </style>

@@ -23,9 +23,9 @@
 </template>
 
 <script>
-import { eventBus } from './shared/services/event-bus'
-import Navbar from './shared/components/navbar/Navbar'
-import Sidebar from './shared/components/sidebar/Sidebar'
+import { eventBus } from './core/services/event-bus'
+import Navbar from './core/components/navbar/Navbar'
+import Sidebar from './core/components/sidebar/Sidebar'
 
 export default {
   name: 'App',
@@ -52,6 +52,5 @@ export default {
 
 <style lang="scss">
 
-  @import "./assets/scss/index";
 
 </style>

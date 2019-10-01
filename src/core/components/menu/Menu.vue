@@ -47,7 +47,7 @@
 
 <script>
 import { eventBus } from '../../services/event-bus'
-import SidebarItem from './components/SidebarItem'
+import SidebarItem from '../sidebar/Sidebar'
 
 export default {
   name: "Sidebar",

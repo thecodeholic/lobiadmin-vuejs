@@ -305,8 +305,7 @@ export default {
   },
   methods: {
     sidebarCollapseToggle () {
-      console.log("111")
-      this.sidebarCollapsed = !this.sidebarCollapsed
+      this.sidebarCollapsed = !this.sidebarCollapsed;
       eventBus.$emit('sidebarCollapseToggled', this.sidebarCollapsed)
     }
   }
