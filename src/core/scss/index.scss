@@ -1,0 +1,97 @@
+@import "components/mixins.scss";
+@import "components/ui/fonts.scss";
+@import "components/ui/animate.scss";
+@import "components/ui/bootstrap-variables.scss";
+
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "~font-awesome/scss/variables";
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+@import '~fullcalendar/dist/fullcalendar';
+//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+//@import "../../node_modules/font-awesome/scss/font-awesome";
+
+//Plugins
+//@import "../../LIBRARY/bootstrap-chosen-master/bootstrap-chosen-variables.scss";
+
+//------------------------------------------------------------------------------
+//--------------------------------MY STYLES-------------------------------------
+//------------------------------------------------------------------------------
+
+
+@import "components/ui/variables.scss";
+@import "components/ui/theme-variables.scss";
+
+@import "components/ui/scaffolding.scss";
+@import "components/ui/responsive-utilities.scss";
+@import "components/ui/utilities.scss";
+@import "components/ui/helper.scss";
+@import "components/ui/documentation.scss";
+
+@import "components/ui/type.scss";
+@import "components/ui/tiles.scss";
+@import "components/ui/switches.scss";
+@import "components/ui/error-page.scss";
+@import "components/ui/discount-labels.scss";
+@import "components/ui/rating.scss";
+@import "components/ui/pricing-tables.scss";
+@import "components/ui/timeline.scss";
+@import "components/ui/invoice.scss";
+@import "components/ui/spinners.scss";
+@import "components/ui/callouts.scss";
+@import "components/ui/messages.scss";
+
+//------------------------------------------------------------------------------
+//------------------------CUSTOMIZED BOOTSTRAP COMPONENTS-----------------------
+//------------------------------------------------------------------------------
+
+@import "components/ui/checkboxes.scss";
+@import "components/ui/radios.scss";
+@import "components/ui/alerts.scss";
+@import "components/ui/buttons.scss";
+@import "components/ui/button-groups.scss";
+@import "components/ui/panels.scss";
+@import "components/ui/list-groups.scss";
+@import "components/ui/tabs.scss";
+@import "components/ui/dropdowns.scss";
+@import "components/ui/forms.scss";
+@import "components/ui/input-groups.scss";
+@import "components/ui/progress-bars.scss";
+@import "components/ui/tables.scss";
+@import "components/ui/labels.scss";
+@import "components/ui/tooltips.scss";
+@import "components/ui/popovers.scss";
+@import "components/ui/modal.scss";
+@import "components/ui/well.scss";
+@import "components/ui/pagination.scss";
+@import "components/ui/grid.scss";
+@import "components/ui/badges.scss";
+@import "components/ui/navbar.scss";
+
+//------------------------------------------------------------------------------
+//------------------------------PLUGIN OVERRIDES--------------------------------
+//------------------------------------------------------------------------------
+
+//@import "components/ui/daterange-picker.scss";
+//@import "components/ui/tags-input.scss";
+//@import "components/ui/bootstrap-timepicker.scss";
+//@import "components/ui/select2.scss";
+//@import "components/ui/typeahead.scss";
+//@import "components/ui/x-editable-datepicker.scss";
+@import "components/ui/full-calendar.scss";
+//@import "components/ui/dropzone.scss";
+//@import "components/ui/sparkline.scss";
+//@import "components/ui/easypie.scss";
+//@import "components/ui/datatables.scss";
+//@import "components/ui/jstree.scss";
+//@import "components/ui/chosen.scss";
+//@import "components/ui/bootstrap-wizard.scss";
+//@import "components/ui/chartjs.scss";
+
+@import "components/ui/main.scss";
+@import "components/ui/themes.scss";
