@@ -3,9 +3,13 @@ import App from './App.vue'
 import router from './shared/router';
 // import i18n from './shared/i18n';
 import './plugins/bootstrap-vue/index';
+import './plugins/font-awesome/index';
 import './index.scss';
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
 
-Vue.config.productionTip = false
+Vue.component('font-awesome-icon', FontAwesomeIcon);
+
+Vue.config.productionTip = false;
 
 
 new Vue({

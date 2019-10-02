@@ -1,5 +1,5 @@
 <template>
-  <b-navbar class="header" toggleable="lg" type="dark" variant="info">
+  <b-navbar class="header" type="dark" variant="info">
     <b-navbar-brand href="#">
       <div class="navbar-brand-img"
            style="background-image: url('assets/img/logo/lobiadmin-logo-text-white-32.png')"></div>
@@ -7,9 +7,18 @@
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-    <b-nav-form>
-      <b-form-input class="mr-sm-2" placeholder="Search"></b-form-input>
-      <b-button class="my-2 my-sm-0" type="submit">Search</b-button>
+    <b-nav-form class="navbar-search">
+      <label for="search" class="sr-only">Search...</label>
+      <input type="text" name="search" id="search" placeholder="Search...">
+      <a class="btn btn-search">
+        <span class="glyphicon glyphicon-search"></span>
+      </a>
+      <a class="btn btn-remove">
+        <span class="glyphicon glyphicon-remove"></span>
+      </a>
+
+<!--      <b-form-input class="mr-sm-2" placeholder="Search"></b-form-input>-->
+<!--      <b-button class="my-2 my-sm-0" type="submit">Search</b-button>-->
     </b-nav-form>
     <div class="clearfix-xxs"></div>
     <div class="navbar-items pull-right">
@@ -71,7 +80,14 @@
 
 
       <b-navbar-nav>
-        <b-nav-item-dropdown text="Messages" right>
+        <b-nav-item>
+          <font-awesome-icon class="navbar-icon"  icon="compress" />
+        </b-nav-item>
+        <b-nav-item-dropdown right no-caret>
+          <template v-slot:button-content>
+            <font-awesome-icon class="navbar-icon" :icon="['far', 'envelope']" />
+            <b-badge pill variant="danger">3</b-badge>
+          </template>
           <li class="dropdown-notifications notification-messages border-1 animated-fast flipInX">
             <div class="notifications-heading border-bottom-1 bg-white">
               Messages
@@ -158,13 +174,18 @@
             </div>
           </li>
         </b-nav-item-dropdown>
-        <b-nav-item text="Lang" right>
-          Notifications
-        </b-nav-item>
-        <b-nav-item text="Lang" right>
-          Tasks
-        </b-nav-item>
-
+        <b-nav-item-dropdown right no-caret>
+          <template v-slot:button-content>
+            <font-awesome-icon class="navbar-icon" :icon="['far', 'bell']" />
+            <b-badge pill variant="danger">8</b-badge>
+          </template>
+        </b-nav-item-dropdown>
+        <b-nav-item-dropdown right no-caret>
+          <template v-slot:button-content>
+            <font-awesome-icon class="navbar-icon" :icon="['fas', 'tasks']" />
+            <b-badge pill variant="danger">9</b-badge>
+          </template>
+        </b-nav-item-dropdown>
       </b-navbar-nav>
     </div>
   </b-navbar>
@@ -182,323 +203,6 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  @import "../../../core/scss/variables";
+<style src="./Navbar.scss" lang="scss">
 
-  .header {
-    padding-top: 0;
-    padding-bottom: 0;
-
-    .navbar-brand {
-      margin-left: 0 !important;
-      text-align: center;
-      position: relative;
-      width: $navbar-brand-width;
-      font-size: $navbar-brand-font-size;
-
-      .navbar-brand-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
-
-    .navbar-items {
-      order: 10;
-
-      .user-actions {
-        > li {
-          > a {
-            .user-avatar {
-              @include square($navbar-user-image-size);
-              //margin-top: ($navbar-height - $navbar-user-image-size ) / 2;
-              //margin-bottom: ($navbar-height - $navbar-user-image-size ) / 2;
-            }
-          }
-
-          .dropdown-menu {
-            left: auto;
-            right: 0;
-          }
-        }
-      }
-    }
-
-    .navbar-items-2 {
-      display: flex;
-    }
-  }
-
-  /*.header {
-    width: 100%;
-    float: none;
-    margin-bottom: 0;
-    //height: $navbar-height;
-    background-color: $navbar-bg;
-
-    .navbar-brand {
-      margin-left: 0 !important;
-      text-align: center;
-      position: relative;
-      width: $navbar-brand-width;
-      font-size: $navbar-brand-font-size;
-
-      .navbar-brand-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-position: center;
-        //background-image: $navbar-brand-img-source;
-        background-repeat: no-repeat;
-      }
-
-      img {
-        margin-top: -8px;
-      }
-    }
-
-    .navbar-search {
-      margin-top: 0;
-      margin-bottom: 0;
-      max-width: $navbar-search-form-width;
-
-      &,
-      & > input {
-        height: 100%;
-      }
-
-      input {
-        outline: 0;
-        border: none;
-        padding-left: 15px;
-        background-color: transparent;
-        width: 100%;
-        color: $navbar-items-color;
-        //@include placeholder($navbar-items-color);
-      }
-
-      .btn {
-        border: none;
-        border-radius: 0;
-        position: absolute;
-        bottom: 0;
-        padding: 0;
-        right: 0;
-        text-align: center;
-        //line-height: $navbar-height;
-        padding-left: $navbar-links-padding-horizontal;
-        padding-right: $navbar-links-padding-horizontal;
-      }
-
-      .btn-search,
-      .btn-remove {
-        display: none;
-      }
-
-      &.navbar-search-full {
-        position: absolute;
-        left: 0;
-        top: 0;
-        right: 0;
-        margin: 0;
-        z-index: 3;
-        border-bottom: 1px solid $gray-lighter;
-        background-color: $navbar-search-full-screen-bg;
-        //height: $navbar-height;
-
-        input {
-          display: block;
-          width: 100%;
-          color: $navbar-search-full-screen-color;
-          padding-right: 2 * 5px + 2 * $navbar-search-full-screen-btn-size;
-          //@include placeholder($navbar-search-full-screen-color);
-        }
-
-        .btn {
-          position: absolute;
-          margin: 0;
-          padding: 0;
-          text-align: center;
-          color: $navbar-search-full-screen-color;
-          //@include square($navbar-search-full-screen-btn-size);
-          line-height: $navbar-search-full-screen-btn-size;
-          //top: ($navbar-height - $navbar-search-full-screen-btn-size) / 2;
-        }
-
-        .btn-search {
-          border: none;
-          right: 5px * 2 + $navbar-search-full-screen-btn-size;
-        }
-
-        .btn-remove {
-          display: inline-block;
-          right: 5px;
-        }
-      }
-    }
-
-    .navbar-nav {
-      margin: 0;
-
-      > li {
-        float: left;
-
-        > a {
-          //padding: 0 $navbar-links-padding-horizontal;
-          //font-size: 14px;
-          //color: $navbar-items-color;
-          //line-height: $navbar-height;
-        }
-
-        > a:hover,
-        > a:focus {
-          //color: $navbar-items-hover-color;
-          //background-color: $navbar-items-hover-bg;
-        }
-
-        &.open > a,
-        &.open > a:hover,
-        &.open > a:focus {
-          //color: $navbar-items-hover-color;
-          //background-color: fadeIn($navbar-items-hover-bg, 10%);
-        }
-
-        > a:active,
-        &.open > a:active {
-          //background-color: fadeIn($navbar-items-hover-bg, 20%);
-        }
-      }
-
-      &.show-hide-menu {
-        > li {
-          > a {
-            padding: 0;
-            border: none;
-            text-align: center;
-            border-left: 1px solid rgba(0, 0, 0, 0.1);
-            border-right: 1px solid rgba(0, 0, 0, 0.1);
-            //line-height: $navbar-height;
-            width: $navbar-menu-toggle-btn-width;
-
-            &.active {
-              background-color: rgba(0, 0, 0, 0.2);
-            }
-          }
-        }
-      }
-    }
-
-    .navbar-items {
-      order: 10;
-    }
-
-    .navbar-items {
-      .user-actions {
-        > li {
-          > a {
-            .user-avatar {
-              //@include square($navbar-user-image-size);
-              //margin-top: ($navbar-height - $navbar-user-image-size ) / 2;
-              //margin-bottom: ($navbar-height - $navbar-user-image-size ) / 2;
-            }
-          }
-
-          .dropdown-menu {
-            left: auto;
-            right: 0;
-          }
-        }
-      }
-    }
-
-    .navbar-items-2 {
-      .navbar-actions {
-        > li {
-          > a {
-            .badge {
-              position: absolute;
-              right: 3px;
-              top: 6px;
-            }
-          }
-        }
-      }
-
-      .navbar-nav {
-        display: inline-block;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    .header {
-      .navbar-brand {
-        width: $navbar-brand-width-mobile;
-
-        .navbar-brand-img {
-          background-image: $navbar-brand-img-source-mobile;
-        }
-      }
-
-      .navbar-nav {
-        > li {
-          > a {
-            padding: 0 $navbar-links-padding-horizontal-mobile;
-          }
-        }
-      }
-    }
-  }
-
-  @include media-breakpoint-down(xs) {
-    .header {
-      .navbar-items {
-        float: none;
-        border-bottom: 1px solid darken($navbar-bg, 5%);
-        @include clearfix();
-      }
-
-      .navbar-items-2 {
-        float: none;
-        display: block;
-        border: none;
-        text-align: center;
-        background-color: $navbar-bg;
-      }
-    }
-    .dropdown-notifications {
-      width: $dropdown-notifications-xxs-width !important;
-    }
-    .notification-tasks {
-      right: -20px;
-      left: auto;
-    }
-    .notification-messages {
-      right: -115px;
-      left: auto;
-    }
-    .notification-news {
-      right: -70px;
-      left: auto;
-    }
-    #app.header-fixed {
-      //padding-top: 2 * $navbar-height;
-    }
-
-    #app.ribbon-fixed {
-      //padding-top: 2 * $navbar-height + $ribbon-height;
-
-      #ribbon {
-        //top: 2 * $navbar-height;
-      }
-    }
-  }*/
 </style>
