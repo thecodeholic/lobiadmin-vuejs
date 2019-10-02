@@ -1,7 +1,8 @@
 <template>
   <b-navbar class="header" toggleable="lg" type="dark" variant="info">
     <b-navbar-brand href="#">
-      <div class="navbar-brand-img"></div>
+      <div class="navbar-brand-img"
+           style="background-image: url('assets/img/logo/lobiadmin-logo-text-white-32.png')"></div>
     </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -10,8 +11,9 @@
       <b-form-input class="mr-sm-2" placeholder="Search"></b-form-input>
       <b-button class="my-2 my-sm-0" type="submit">Search</b-button>
     </b-nav-form>
-    <div class="navbar-items">
-      <b-navbar-nav class="ml-auto">
+    <div class="clearfix-xxs"></div>
+    <div class="navbar-items pull-right">
+      <b-navbar-nav>
         <!--    Avatar -->
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
@@ -24,17 +26,15 @@
       </b-navbar-nav>
     </div>
     <div class="clearfix-xxs"></div>
-    <div class="navbar-items-2">
+    <div class="navbar-items-2 ml-auto">
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-
+      <b-navbar-nav>
         <b-nav-item-dropdown text="Lang" right>
           <b-dropdown-item href="#">EN</b-dropdown-item>
           <b-dropdown-item href="#">ES</b-dropdown-item>
           <b-dropdown-item href="#">RU</b-dropdown-item>
           <b-dropdown-item href="#">FA</b-dropdown-item>
         </b-nav-item-dropdown>
-
       </b-navbar-nav>
 
 
@@ -174,7 +174,7 @@
         width: 100%;
         height: 100%;
         background-position: center;
-        background-image: $navbar-brand-img-source;
+        //background-image: $navbar-brand-img-source;
         background-repeat: no-repeat;
       }
 
@@ -270,28 +270,28 @@
         float: left;
 
         > a {
-          padding: 0 $navbar-links-padding-horizontal;
-          font-size: 14px;
-          color: $navbar-items-color;
+          //padding: 0 $navbar-links-padding-horizontal;
+          //font-size: 14px;
+          //color: $navbar-items-color;
           //line-height: $navbar-height;
         }
 
         > a:hover,
         > a:focus {
-          color: $navbar-items-hover-color;
-          background-color: $navbar-items-hover-bg;
+          //color: $navbar-items-hover-color;
+          //background-color: $navbar-items-hover-bg;
         }
 
         &.open > a,
         &.open > a:hover,
         &.open > a:focus {
-          color: $navbar-items-hover-color;
-          background-color: fadeIn($navbar-items-hover-bg, 10%);
+          //color: $navbar-items-hover-color;
+          //background-color: fadeIn($navbar-items-hover-bg, 10%);
         }
 
         > a:active,
         &.open > a:active {
-          background-color: fadeIn($navbar-items-hover-bg, 20%);
+          //background-color: fadeIn($navbar-items-hover-bg, 20%);
         }
       }
 
@@ -314,9 +314,8 @@
       }
     }
 
-    .navbar-items,
-    .navbar-items-2 {
-      float: right;
+    .navbar-items {
+      order: 10;
     }
 
     .navbar-items {
@@ -355,6 +354,70 @@
         display: inline-block;
         margin-top: 0;
         margin-bottom: 0;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .header {
+      .navbar-brand {
+        width: $navbar-brand-width-mobile;
+
+        .navbar-brand-img {
+          background-image: $navbar-brand-img-source-mobile;
+        }
+      }
+
+      .navbar-nav {
+        > li {
+          > a {
+            padding: 0 $navbar-links-padding-horizontal-mobile;
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    .header {
+      .navbar-items {
+        float: none;
+        border-bottom: 1px solid darken($navbar-bg, 5%);
+        @include clearfix();
+      }
+
+      .navbar-items-2 {
+        float: none;
+        display: block;
+        border: none;
+        text-align: center;
+        background-color: $navbar-bg;
+      }
+    }
+    .dropdown-notifications {
+      width: $dropdown-notifications-xxs-width !important;
+    }
+    .notification-tasks {
+      right: -20px;
+      left: auto;
+    }
+    .notification-messages {
+      right: -115px;
+      left: auto;
+    }
+    .notification-news {
+      right: -70px;
+      left: auto;
+    }
+    #app.header-fixed {
+      //padding-top: 2 * $navbar-height;
+    }
+
+    #app.ribbon-fixed {
+      //padding-top: 2 * $navbar-height + $ribbon-height;
+
+      #ribbon {
+        //top: 2 * $navbar-height;
       }
     }
   }

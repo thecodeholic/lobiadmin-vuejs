@@ -1,5 +1,6 @@
 @import "node_modules/bootstrap/scss/functions";
 @import "../../plugins/bootstrap/variables";
+@import "node_modules/bootstrap/scss/mixins";
 
 
 // Bootstrap 3 fallback variables
@@ -109,7 +110,7 @@ $navbar-menu-toggle-btn-width: 50px;
 $navbar-brand-width: $menu-width - $navbar-menu-toggle-btn-width;
 $navbar-brand-width-mobile: 80px;
 $navbar-brand-font-size: 22px;
-$navbar-brand-img-source: url('~/assets/img/logo/lobiadmin-logo-text-white-32.png');
+//$navbar-brand-img-source: url('~/assets/img/logo/lobiadmin-logo-text-white-32.png');
 $navbar-brand-img-source-mobile: url('~/assets/img/logo/lobiadmin-logo-48.png');
 $navbar-user-image-size: 40px;
 $navbar-search-input-padding-left: 10px;

@@ -797,64 +797,6 @@ html{
         }
     }
 }
-@media screen and (max-width: $screen-xs-max){
-    .header{
-        .navbar-brand{
-            width: $navbar-brand-width-mobile;
-            .navbar-brand-img{
-                background-image: $navbar-brand-img-source-mobile;
-            }
-        }
-        .navbar-nav{
-            >li{
-                >a{
-                    padding: 0 $navbar-links-padding-horizontal-mobile;
-                }
-            }
-        }
-    }
-}
-@media screen and (max-width: $screen-xs-min){
-    .header{
-        .navbar-items{
-            float: none;
-            border-bottom: 1px solid darken($navbar-bg, 5%);
-            @include clearfix();
-        }
-        .navbar-items-2{
-            float: none;
-            display: block;
-            border: none;
-            text-align: center;
-            background-color: $navbar-bg;
-        }
-    }
-    .dropdown-notifications{
-        width: $dropdown-notifications-xxs-width !important;
-    }
-    .notification-tasks{
-        right: -20px;
-        left: auto;
-    }
-    .notification-messages{
-        right: -115px;
-        left: auto;
-    }
-    .notification-news{
-        right: -70px;
-        left: auto;
-    }
-    #app.header-fixed{
-        padding-top: 2 * $navbar-height;
-    }
-
-    #app.ribbon-fixed{
-        padding-top: 2 * $navbar-height + $ribbon-height;
-        #ribbon{
-            top: 2 * $navbar-height;
-        }
-    }
-}
 #addEventModal{
     .modal-dialog{
         .btn-group-event-style{
