@@ -15,6 +15,7 @@
 @import "mixins/forms.scss";
 @import "mixins/navbar.scss";
 @import "mixins/menu.scss";
+@import "mixins/size.scss";
 
 
 //------------------------------------------------------------------------------
@@ -29,5 +30,5 @@
                 @include nav-menu-submenu($current-level+1, $padding);
             }
         }
-    } 
+    }
 }

@@ -13,12 +13,13 @@
     </b-nav-form>
     <div class="clearfix-xxs"></div>
     <div class="navbar-items pull-right">
-      <b-navbar-nav>
+      <b-navbar-nav class="user-actions">
         <!--    Avatar -->
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
           <template v-slot:button-content>
-            <em>User</em>
+            <img class="user-avatar" src="assets/img/users/me-160.jpg" alt="..."/>
+            <b class="caret"></b>
           </template>
           <b-dropdown-item href="#">Profile</b-dropdown-item>
           <b-dropdown-item href="#">Sign Out</b-dropdown-item>
@@ -29,11 +30,42 @@
     <div class="navbar-items-2 ml-auto">
       <!-- Right aligned nav items -->
       <b-navbar-nav>
-        <b-nav-item-dropdown text="Lang" right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
-          <b-dropdown-item href="#">ES</b-dropdown-item>
-          <b-dropdown-item href="#">RU</b-dropdown-item>
-          <b-dropdown-item href="#">FA</b-dropdown-item>
+        <b-nav-item-dropdown
+                text="Lang"
+                html='<img src="assets/img/flags/en.png" alt="en"> <span class="visible-lg-inline-block visible-md-inline-block visible-sm-inline-block">english</span>'
+                right>
+          <b-dropdown-item href="#">
+            <img src="assets/img/flags/en.png" alt="en"/>
+            english(UK)
+          </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <img src="assets/img/flags/us.png" alt="en"/>
+            english(US)
+          </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <img src="assets/img/flags/fr.png" alt="en"/>
+            français
+          </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <img src="assets/img/flags/it.png" alt="en"/>
+            italiano
+          </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <img src="assets/img/flags/ru.png" alt="en"/>
+            русский
+          </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <img src="assets/img/flags/de.png" alt="en"/>
+            deutsch
+          </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <img src="assets/img/flags/es.png" alt="en"/>
+            español
+          </b-dropdown-item>
+          <b-dropdown-item href="#">
+            <img src="assets/img/flags/ge.png" alt="en"/>
+            ქართული
+          </b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
 
@@ -154,6 +186,54 @@
   @import "../../../core/scss/variables";
 
   .header {
+    padding-top: 0;
+    padding-bottom: 0;
+
+    .navbar-brand {
+      margin-left: 0 !important;
+      text-align: center;
+      position: relative;
+      width: $navbar-brand-width;
+      font-size: $navbar-brand-font-size;
+
+      .navbar-brand-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+
+    .navbar-items {
+      order: 10;
+
+      .user-actions {
+        > li {
+          > a {
+            .user-avatar {
+              @include square($navbar-user-image-size);
+              //margin-top: ($navbar-height - $navbar-user-image-size ) / 2;
+              //margin-bottom: ($navbar-height - $navbar-user-image-size ) / 2;
+            }
+          }
+
+          .dropdown-menu {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .navbar-items-2 {
+      display: flex;
+    }
+  }
+
+  /*.header {
     width: 100%;
     float: none;
     margin-bottom: 0;
@@ -420,5 +500,5 @@
         //top: 2 * $navbar-height;
       }
     }
-  }
+  }*/
 </style>
