@@ -1,0 +1,226 @@
+//Author     : $arboshiki
+
+//------------------------------------------------------------------------------
+//----------------------------TEXT COLORS---------------------------------------
+//------------------------------------------------------------------------------
+.text-success-lighter{
+    color: $success-lighter !important;
+}
+.text-success-light{
+    color: $success-light !important;
+}
+.text-success{
+    color: $success !important;
+}
+.text-success-dark{
+    color: $success-dark !important;
+}
+.text-success-darker{
+    color: $success-darker !important;
+}
+.text-info-lighter{
+    color: $info-lighter !important;
+}
+.text-info-light{
+    color: $info-light !important;
+}
+.text-info{
+    color: $info !important;
+}
+.text-info-dark{
+    color: $info-dark !important;
+}
+.text-info-darker{
+    color: $info-darker !important;
+}
+.text-warning-lighter{
+    color: $warning-lighter !important;
+}
+.text-warning-light{
+    color: $warning-light !important;
+}
+.text-warning{
+    color: $warning !important;
+}
+.text-warning-dark{
+    color: $warning-dark !important;
+}
+.text-warning-darker{
+    color: $warning-darker !important;
+}
+.text-primary-lighter{
+    color: $primary-lighter !important;
+}
+.text-primary-light{
+    color: $primary-light !important;
+}
+.text-primary{
+    color: $primary !important;
+}
+.text-primary-dark{
+    color: $primary-dark !important;
+}
+.text-primary-darker{
+    color: $primary-darker !important;
+}
+.text-danger-lighter{
+    color: $danger-lighter !important;
+}
+.text-danger-light{
+    color: $danger-light !important;
+}
+.text-danger{
+    color: $danger !important;
+}
+.text-danger-dark{
+    color: $danger-dark !important;
+}
+.text-danger-darker{
+    color: $danger-darker !important;
+}
+.text-white{
+    color: #FFF !important;
+}
+.text-black{
+    color: #000 !important;
+}
+.text-gray-light{
+    color: lighten($gray-light, 15%) !important;
+}
+.text-gray-lighter{
+    color: $gray-lighter !important;
+}
+.text-gray{
+    color: $gray !important;
+}
+.text-gray-dark{
+    color: $gray-dark !important;
+}
+.text-gray-darker{
+    color: $gray-darker !important;
+}
+.text-blue{
+    color: $brand-blue !important;
+}
+.text-blue-light{
+    color: $brand-blue-light !important;
+}
+.text-blue-dark{
+    color: $brand-blue-dark !important;
+}
+.text-green{
+    color: $brand-green !important;
+}
+.text-green-light{
+    color: $brand-green-light !important;
+}
+.text-green-dark{
+    color: $brand-green-dark !important;
+}
+.text-red-light{
+    color: $brand-red-light !important;
+}
+.text-red{
+    color: $brand-red !important;
+}
+.text-red-dark{
+    color: $brand-red-dark !important;
+}
+.text-purple-light{
+    color: $brand-purple-light !important;
+}
+.text-purple{
+    color: $brand-purple !important;
+}
+.text-purple-dark{
+    color: $brand-purple-dark !important;
+}
+.text-pink-light{
+    color: $brand-pink-light !important;
+}
+.text-pink{
+    color: $brand-pink !important;
+}
+.text-pink-dark{
+    color: $brand-pink-dark !important;
+}
+.text-orange-light{
+    color: $brand-orange-light !important;
+}
+.text-orange{
+    color: $brand-orange !important;
+}
+.text-orange-dark{
+    color: $brand-orange-dark !important;
+}
+.text-cyan-light{
+    color: $brand-cyan-light !important;
+}
+.text-cyan{
+    color: $brand-cyan !important;
+}
+.text-cyan-dark{
+    color: $brand-cyan-dark !important;
+}
+.text-muted{
+    color: $text-muted-color !important;
+}
+
+.page-header-dashed{
+    padding-bottom: (($line-height-computed / 2) - 1);
+    border-bottom: 1px dashed $page-header-border-color;
+}
+
+//------------------------------------------------------------------------------
+//----------------------------TEXT SIZE CLASSES---------------------------------
+//------------------------------------------------------------------------------
+.font-size-xs{
+    font-size: 9px !important;
+}
+.font-size-sm{
+    font-size: 11px !important;
+}
+.font-size-base{
+    font-size: $font-size-base !important;
+}
+.font-size-lg{
+    font-size: 18px !important;
+}
+.font-size-xl{
+    font-size: 24px !important;
+}
+.font-size-xxl{
+    font-size: 28px !important;
+}
+.font-size-3xl{
+    font-size: 32px !important;
+}
+.font-size-4xl{
+    font-size: 36px !important;
+}
+.font-size-5xl{
+    font-size: 42px !important;
+}
+.font-size-6xl{
+    font-size: 48px !important;
+}
+
+.text-overflow{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+//------------------------------------------------------------------------------
+//----------------------------FONT WEIGHT CLASSES-------------------------------
+//------------------------------------------------------------------------------
+
+.font-thin{
+    font-weight: 300;
+}
+.font-normal{
+    font-weight: 400;
+}
+.font-bold{
+    font-weight: 700;
+}

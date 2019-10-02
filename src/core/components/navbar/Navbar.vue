@@ -1,12 +1,14 @@
 <template>
-  <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">NavBar</b-navbar-brand>
+  <b-navbar class="header" toggleable="lg" type="dark" variant="info">
+    <b-navbar-brand href="#">
+      <div class="navbar-brand-img"></div>
+    </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-nav-form>
       <b-form-input class="mr-sm-2" placeholder="Search"></b-form-input>
-      <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+      <b-button class="my-2 my-sm-0" type="submit">Search</b-button>
     </b-nav-form>
     <div class="navbar-items">
       <b-navbar-nav class="ml-auto">
@@ -149,5 +151,211 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "../../../core/scss/variables";
 
+  .header {
+    width: 100%;
+    float: none;
+    margin-bottom: 0;
+    //height: $navbar-height;
+    background-color: $navbar-bg;
+
+    .navbar-brand {
+      margin-left: 0 !important;
+      text-align: center;
+      position: relative;
+      width: $navbar-brand-width;
+      font-size: $navbar-brand-font-size;
+
+      .navbar-brand-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-image: $navbar-brand-img-source;
+        background-repeat: no-repeat;
+      }
+
+      img {
+        margin-top: -8px;
+      }
+    }
+
+    .navbar-search {
+      margin-top: 0;
+      margin-bottom: 0;
+      max-width: $navbar-search-form-width;
+
+      &,
+      & > input {
+        height: 100%;
+      }
+
+      input {
+        outline: 0;
+        border: none;
+        padding-left: 15px;
+        background-color: transparent;
+        width: 100%;
+        color: $navbar-items-color;
+        //@include placeholder($navbar-items-color);
+      }
+
+      .btn {
+        border: none;
+        border-radius: 0;
+        position: absolute;
+        bottom: 0;
+        padding: 0;
+        right: 0;
+        text-align: center;
+        //line-height: $navbar-height;
+        padding-left: $navbar-links-padding-horizontal;
+        padding-right: $navbar-links-padding-horizontal;
+      }
+
+      .btn-search,
+      .btn-remove {
+        display: none;
+      }
+
+      &.navbar-search-full {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: 0;
+        z-index: 3;
+        border-bottom: 1px solid $gray-lighter;
+        background-color: $navbar-search-full-screen-bg;
+        //height: $navbar-height;
+
+        input {
+          display: block;
+          width: 100%;
+          color: $navbar-search-full-screen-color;
+          padding-right: 2 * 5px + 2 * $navbar-search-full-screen-btn-size;
+          //@include placeholder($navbar-search-full-screen-color);
+        }
+
+        .btn {
+          position: absolute;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          color: $navbar-search-full-screen-color;
+          //@include square($navbar-search-full-screen-btn-size);
+          line-height: $navbar-search-full-screen-btn-size;
+          //top: ($navbar-height - $navbar-search-full-screen-btn-size) / 2;
+        }
+
+        .btn-search {
+          border: none;
+          right: 5px * 2 + $navbar-search-full-screen-btn-size;
+        }
+
+        .btn-remove {
+          display: inline-block;
+          right: 5px;
+        }
+      }
+    }
+
+    .navbar-nav {
+      margin: 0;
+
+      > li {
+        float: left;
+
+        > a {
+          padding: 0 $navbar-links-padding-horizontal;
+          font-size: 14px;
+          color: $navbar-items-color;
+          //line-height: $navbar-height;
+        }
+
+        > a:hover,
+        > a:focus {
+          color: $navbar-items-hover-color;
+          background-color: $navbar-items-hover-bg;
+        }
+
+        &.open > a,
+        &.open > a:hover,
+        &.open > a:focus {
+          color: $navbar-items-hover-color;
+          background-color: fadeIn($navbar-items-hover-bg, 10%);
+        }
+
+        > a:active,
+        &.open > a:active {
+          background-color: fadeIn($navbar-items-hover-bg, 20%);
+        }
+      }
+
+      &.show-hide-menu {
+        > li {
+          > a {
+            padding: 0;
+            border: none;
+            text-align: center;
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            //line-height: $navbar-height;
+            width: $navbar-menu-toggle-btn-width;
+
+            &.active {
+              background-color: rgba(0, 0, 0, 0.2);
+            }
+          }
+        }
+      }
+    }
+
+    .navbar-items,
+    .navbar-items-2 {
+      float: right;
+    }
+
+    .navbar-items {
+      .user-actions {
+        > li {
+          > a {
+            .user-avatar {
+              //@include square($navbar-user-image-size);
+              //margin-top: ($navbar-height - $navbar-user-image-size ) / 2;
+              //margin-bottom: ($navbar-height - $navbar-user-image-size ) / 2;
+            }
+          }
+
+          .dropdown-menu {
+            left: auto;
+            right: 0;
+          }
+        }
+      }
+    }
+
+    .navbar-items-2 {
+      .navbar-actions {
+        > li {
+          > a {
+            .badge {
+              position: absolute;
+              right: 3px;
+              top: 6px;
+            }
+          }
+        }
+      }
+
+      .navbar-nav {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
 </style>
