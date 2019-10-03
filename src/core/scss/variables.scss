@@ -192,12 +192,12 @@ $dropdown-notifications-heading-padding: 6px 9px;
 $dropdown-notifications-item-padding: 6px;
 $dropdown-notifications-item-border-bottom: 1px solid darken($gray-lighter, 5%);
 $dropdown-notifications-item-bg: #FFF;
-$dropdown-notifications-item-heading-font-size: 14px;
-$dropdown-notifications-item-unread-bg: $gray-lighter;
-$dropdown-notifications-item-hover-bg: lighten($dropdown-notifications-item-unread-bg, 3%);
+$dropdown-notifications-item-heading-font-size: 13px;
+$dropdown-notifications-item-unread-bg: #f7f8fb;
+$dropdown-notifications-item-hover-bg: darken($dropdown-notifications-item-unread-bg, 2%);
 $dropdown-notifications-item-color: $gray-dark;
-$dropdown-notifications-item-body-color: $text-muted-color;
-$dropdown-notifications-item-img-size: 50px;
+$dropdown-notifications-item-body-color: $gray-dark;
+$dropdown-notifications-item-img-size: 44px;
 $dropdown-notifications-item-icon-font-size: 40px;
 $dropdown-notifications-item-icon-color: $gray-light;
 $dropdown-notifications-item-icon-bg: $gray-lighter;
@@ -205,7 +205,7 @@ $dropdown-notifications-footer-padding: $dropdown-notifications-heading-padding;
 
 $dropdown-notifications-messages-item-unread-heading-color: $gray-light;
 $dropdown-notifications-messages-item-unread-hover-heading-color: $gray-dark;
-$dropdown-notifications-messages-item-sub-heading-color: $gray-light;
+$dropdown-notifications-messages-item-sub-heading-color: $gray-dark;
 
 $dropdown-notifications-news-item-friend-request-response-btn-margin-top: -12px;
 
