@@ -43,7 +43,7 @@ export default {
       type: Number,
       default: 1
     },
-    icon: String,
+    icon: [String, Array],
     badge: Number,
     badgeClasses: [String, Array],
     children: Array
