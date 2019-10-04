@@ -1,6 +1,6 @@
 <template>
   <div>
-    <font-awesome-icon class="menu-item-icon" :icon="['fas', icon]"/>
+    <font-awesome-icon class="menu-item-icon" :icon="icon"/>
     <span class="inner-text">{{name}}</span>
     <span v-if="badge" class="badge-wrapper">
         <span class="badge" :class="badgeClasses">{{badge}}</span>
@@ -14,7 +14,7 @@ export default {
   props: {
     badgeClasses: [String, Array],
     name: String,
-    icon: String,
+    icon: [String, Array],
     badge: Number
   }
 }

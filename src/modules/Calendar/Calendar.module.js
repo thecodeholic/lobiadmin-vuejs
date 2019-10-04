@@ -2,15 +2,15 @@ import router from '../../shared/router'
 import MenuService from "../../core/components/sidebar/MenuService";
 import MenuItem from "../../core/components/sidebar/MenuItem";
 import i18n from './../../shared/i18n'
-import Dashboard from "./Dashboard";
+import Calendar from "./Calendar";
 
 let {routes} = router.options;
 const route = routes.find(r => r.path === '/');
 
 let tmpRoutes = [
   {
-    path: 'dashboard',
-    component: Dashboard,
+    path: 'calendar',
+    component: Calendar,
     // meta: {
     //   requiresAuth: true
     // }
@@ -23,4 +23,4 @@ tmpRoutes.forEach((obj) => {
 
 router.addRoutes([route]);
 
-MenuService.addMenuItem(new MenuItem('/dashboard', i18n.t('Dashboard'), 1, ['fas', 'tachometer-alt']));
+MenuService.addMenuItem(new MenuItem('/calendar', i18n.t('Calendar'), 1, ['far', 'calendar-alt']));

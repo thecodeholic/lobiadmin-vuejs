@@ -215,21 +215,34 @@
 
   .menu-collapse-line {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: $menu-collapse-line-height;
     background-color: $menu-collapse-line-bg;
     border-top: $menu-collapse-line-border-width solid $menu-collapse-line-border-color;
     border-bottom: $menu-collapse-line-border-width solid $menu-collapse-line-border-color;
 
     .menu-toggle-btn {
-      display: inline;
+      width: 22px;
+      height: 22px;
+      display: inline-block;
       cursor: pointer;
       font-size: $menu-collapse-line-btn-font-size;
-      line-height: $menu-collapse-line-height - $menu-collapse-line-border-width * 2;
-      color: $menu-collapse-line-btn-color;
+      line-height: 22px;
+      color: white;
+      border-radius: 50%;
+      background-color: $menu-color;
       @include transition(0.3s transform);
 
+      .svg-inline--fa {
+        position: relative;
+        left: -1px;
+        line-height: 23px;
+      }
+
       &:hover {
-        color: $menu-collapse-line-btn-hover-color;
+        //color: $menu-collapse-line-btn-hover-color;
         text-shadow: $nav-menu-item-hover-text-shadow;
       }
     }

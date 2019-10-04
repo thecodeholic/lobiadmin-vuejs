@@ -7,6 +7,7 @@ import './plugins/bootstrap-vue/index';
 import './plugins/font-awesome/index';
 import './index.scss';
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
+import './icons';
 
 Vue.use(require('vue-moment'));
 Vue.component('font-awesome-icon', FontAwesomeIcon);

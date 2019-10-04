@@ -39,7 +39,7 @@
     <div class="menu-collapse-line">
       <!--Menu collapse/expand icon is put and control from LobiAdmin.js file-->
       <div class="menu-toggle-btn" @click="sidebarCollapseToggle" data-action="collapse-expand-sidebar">
-        <font-awesome-icon class="fa fa-chevron-circle-left"></font-awesome-icon>
+        <font-awesome-icon :icon="['fas', 'angle-left']"></font-awesome-icon>
       </div>
     </div>
   </div>
