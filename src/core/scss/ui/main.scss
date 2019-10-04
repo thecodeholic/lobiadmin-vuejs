@@ -13,31 +13,7 @@ html{
     position: relative;
 }
 #app{
-    &.menu-collapsed{
-        .show-hide-menu{
-            visibility: hidden;
-        }
-        #main{
-            margin-left: $menu-width-collapsed;
-        }
 
-    }
-    &.menu-hidden,
-    &.menu-hidden-partial{
-        .menu{
-            .menu-collapse-line{
-                display: none;
-            }
-        }
-    }
-    &.menu-hidden{
-        #main{
-            margin-left: 0;
-        }
-        .menu{
-            left: -$menu-width;
-        }
-    }
     &.header-fixed{
         padding-top: $navbar-height;
         .header{
@@ -288,14 +264,6 @@ html{
         }
     }
     #app{
-        .menu{
-            left: -$menu-width;
-        }
-        &.menu-hidden{
-            .menu{
-                left: 0;
-            }
-        }
         &.menu-fixed{
             .menu{
                 padding-bottom: $navbar-height + $menu-header-height + 40px;
@@ -325,21 +293,6 @@ html{
     }
     #main{
         margin-left: 0;
-    }
-}
-@media screen and (min-width: $screen-md-min){
-    #app{
-        &.menu-hidden{
-            #main{
-                margin-left: $menu-partial-hidden-width;
-            }
-            .menu{
-                left: -$menu-width + $menu-partial-hidden-width;
-                &:hover{
-                    left: 0;
-                }
-            }
-        }
     }
 }
 #addEventModal{

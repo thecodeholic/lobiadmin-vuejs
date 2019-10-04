@@ -101,13 +101,14 @@ $font-size-base: 13px;
 
 $menu-width: 220px;
 //navbar
+$navbar-height: 54px;
 $navbar-bg: darken($info, 5%);
 $navbar-items-color: $gray-lighter;
 $navbar-items-hover-bg: rgba(0, 0, 0, 0.07);
 $navbar-items-hover-color: lighten($navbar-items-color, 10%);
 $navbar-links-padding-horizontal: 18px;
 $navbar-links-padding-horizontal-mobile: 15px;
-$navbar-menu-toggle-btn-width: 50px;
+$navbar-menu-toggle-btn-width: $navbar-height;
 $navbar-brand-width: $menu-width - $navbar-menu-toggle-btn-width;
 $navbar-brand-width-mobile: 80px;
 $navbar-brand-font-size: 22px;
@@ -127,7 +128,6 @@ $menu-color: $gray;
 $menu-border-color: darken($menu-bg, 14%);
 $menu-width-collapsed: 50px;
 $menu-partial-hidden-width: 10px;
-//$navbar-height variable is bootstrap variable
 //$menu-margin-top: $navbar-height;
 
 $menu-header-height: 50px;

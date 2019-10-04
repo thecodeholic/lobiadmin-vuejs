@@ -5,7 +5,7 @@
            style="background-image: url('assets/img/logo/lobiadmin-logo-text-white-32.png')"></div>
     </b-navbar-brand>
 
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <SidebarToggle/>
 
     <b-nav-form class="navbar-search">
       <label for="search" class="sr-only">Search...</label>
@@ -20,7 +20,7 @@
 <!--      <b-form-input class="mr-sm-2" placeholder="Search"></b-form-input>-->
 <!--      <b-button class="my-2 my-sm-0" type="submit">Search</b-button>-->
     </b-nav-form>
-    <div class="clearfix-xxs"></div>
+<!--    <div class="clearfix-xxs"></div>-->
     <div class="navbar-items pull-right">
       <b-navbar-nav class="user-actions">
         <!--    Avatar -->
@@ -35,7 +35,7 @@
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </div>
-    <div class="clearfix-xxs"></div>
+<!--    <div class="clearfix-xxs"></div>-->
     <div class="navbar-items-2 ml-auto">
       <!-- Right aligned nav items -->
       <b-navbar-nav>
@@ -305,7 +305,6 @@
 
 <script>
   import SidebarToggle from './components/SidebarToggle'
-  import _ from 'lodash';
 
   export default {
     name: 'Navbar',

@@ -1,32 +1,53 @@
 <template>
-  <ul class="nav navbar-nav pull-left show-hide-menu">
-    <li>
-      <a href="#" class="border-radius-0 btn font-size-lg" @click="toggleSidebar" :class="{active: !sidebarOpened}">
-        <i class="fa fa-bars"></i>
-      </a>
-    </li>
-  </ul>
+  <button class="show-hide-menu" @click="toggleSidebar" :class="{active: menuHidden}">
+    <font-awesome-icon :icon="['fas', 'bars']"></font-awesome-icon>
+  </button>
 </template>
 
 <script>
-import { eventBus } from '../../../services/event-bus'
+  import {mapState, mapActions} from 'vuex';
+  import {eventBus} from '../../../services/event-bus'
 
-export default {
-  name: "SidebarToggle",
-  data: () => {
-    return {
-      sidebarOpened: true
-    }
-  },
-  methods: {
-    toggleSidebar () {
-      this.sidebarOpened = !this.sidebarOpened
-      eventBus.$emit('sidebarShowHideToggled', this.sidebarOpened)
+  export default {
+    name: "SidebarToggle",
+    data: () => {
+      return {}
+    },
+    computed: {
+      ...mapState(['menuHidden'])
+    },
+    methods: {
+      ...mapActions(['toggleMenuHide']),
+      toggleSidebar() {
+        this.toggleMenuHide()
+      }
     }
   }
-}
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import '../../../scss/variables';
 
+  .show-hide-menu {
+    padding: 0;
+    outline: 0;
+    border: none;
+    text-align: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    //line-height: $navbar-height;
+    width: $navbar-menu-toggle-btn-width;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+
+    &:hover {
+      background-color: $navbar-items-hover-bg;
+    }
+
+    &:active,
+    &.active {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
 </style>

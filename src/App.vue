@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :class="{'menu-collapsed': this.menuCollapsed}">
+  <div id="app" :class="{'menu-collapsed': this.menuCollapsed, 'menu-hidden': this.menuHidden}">
     <router-view/>
   </div>
   <!--  <div id="app" :class="{'menu-hidden': !menuOpened, 'menu-collapsed': menuCollapsed}">-->
@@ -36,7 +36,8 @@
       }
     },
     computed: mapState([
-      'menuCollapsed'
+      'menuCollapsed',
+      'menuHidden'
     ]),
     created() {
       eventBus.$on('sidebarShowHideToggled', (opened) => {
@@ -57,111 +58,4 @@
   #app {
     height: 100vh;
   }
-
-  #app {
-    &.menu-collapsed {
-      .menu {
-        overflow: visible;
-        width: $menu-width-collapsed;
-        .menu-heading {
-          .menu-header-buttons-wrapper {
-            .btn-menu-header-collapse {
-              display: inline-block;
-            }
-
-            .menu-header-buttons {
-              display: inline-block;
-              position: absolute;
-              width: 0;
-              top: 0;
-              height: 100%;
-              left: 100%;
-              padding: inherit;
-              @include transition(all $transition-duration);
-              @include box-shadow(2px 2px 5px rgba(0, 0, 0, 0.1));
-            }
-
-            &:hover {
-              .btn-menu-header-collapse {
-                float: left;
-              }
-
-              .menu-header-buttons {
-                min-width: $menu-width;
-                background-color: $menu-bg;
-              }
-            }
-          }
-        }
-
-        nav {
-          > ul {
-            > li {
-              > a {
-                text-align: center;
-
-                .inner-text, .menu-item-toggle-icon {
-                  display: none;
-                }
-
-                .badge-wrapper {
-                  line-height: 1;
-                  top: 2px;
-                  right: 2px;
-                }
-              }
-
-              > ul {
-                display: none !important;
-              }
-
-              &.opened {
-                > a {
-                  border-bottom: none;
-                }
-              }
-
-              &:hover {
-                > a {
-                  .inner-text {
-                    display: block;
-                    position: absolute;
-                    top: 0;
-                    text-align: left;
-                    border: 1px solid $menu-border-color;
-                    left: $menu-width-collapsed - 5px;
-                    width: $menu-width;
-                    background-color: $nav-menu-item-active-bg;
-                    padding: $nav-menu-item-padding-vertical $nav-menu-item-padding-horizontal;
-                    z-index: 4;
-                  }
-                }
-
-                > ul {
-                  display: block !important;
-                  position: absolute;
-                  top: 100%;
-                  border: 1px solid $menu-border-color;
-                  border-top-color: transparent;
-                  margin-top: -1px;
-                  left: $menu-width-collapsed - 5px;
-                  width: $menu-width;
-                  z-index: 3;
-                }
-              }
-            }
-          }
-        }
-
-        .menu-collapse-line {
-          .menu-toggle-btn {
-            > * {
-              @include rotate(180deg);
-            }
-          }
-        }
-      }
-    }
-  }
-
 </style>

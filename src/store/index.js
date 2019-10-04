@@ -8,15 +8,19 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     count: 0,
-    menuCollapsed: false
+    menuCollapsed: false,
+    menuHidden: false
   },
   actions: {
     toggleMenuCollapse({commit, state}){
-      console.log(state);
       commit('toggleMenuCollapse', !state.menuCollapsed);
+    },
+    toggleMenuHide({commit, state}){
+      commit('toggleMenuHide', !state.menuHidden);
     }
   },
   mutations: {
-    toggleMenuCollapse: (state, collapsed) => state.menuCollapsed = collapsed
+    toggleMenuCollapse: (state, collapsed) => state.menuCollapsed = collapsed,
+    toggleMenuHide: (state, hide) => state.menuHidden = hide,
   }
 });

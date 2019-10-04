@@ -2,11 +2,12 @@
 
 .header.navbar {
 
-  padding-top: 0;
-  padding-bottom: 0;
+  padding: 0;
+  height: $navbar-height;
+  align-items: stretch;
 
   .navbar-brand {
-    margin-left: 0 !important;
+    margin: 0 !important;
     text-align: center;
     position: relative;
     width: $navbar-brand-width;
@@ -125,7 +126,8 @@
     }
   }
 
-  .navbar-items-2 {
+  .navbar-items-2,
+  .navbar-items {
     display: flex;
   }
 
@@ -151,8 +153,8 @@
     }
 
     .nav-link {
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
+      padding-top: 0;
+      padding-bottom: 0;
       line-height: 2rem;
 
       .navbar-icon {
@@ -171,6 +173,9 @@
   &.navbar-expand {
     .navbar-nav {
       .nav-link {
+        height: 100%;
+        display: flex;
+        align-items: center;
         padding-left: 1.25rem;
         padding-right: 1.25rem;
       }
@@ -197,7 +202,8 @@
       border-bottom: 1px solid $gray-light;
       font-size: $dropdown-notifications-heading-font-size;
       padding: $dropdown-notifications-heading-padding;
-      .header-actions{
+
+      .header-actions {
         float: right;
       }
     }
@@ -389,6 +395,29 @@
     }
   }
 }
+@include media-breakpoint-down(sm) {
+  .header {
+    .navbar-search {
+      margin-left: 0;
+      max-width: 2000px;
+
+      input {
+        display: none;
+      }
+
+      .btn {
+        position: relative;
+        margin-right: -15px;
+        color: $navbar-items-color;
+      }
+
+      .btn-search {
+        display: block;
+        border-right: 1px solid darken($navbar-bg, 5%);
+      }
+    }
+  }
+}
 
 /*.header {
   width: 100%;
@@ -532,23 +561,6 @@
       }
     }
 
-    &.show-hide-menu {
-      > li {
-        > a {
-          padding: 0;
-          border: none;
-          text-align: center;
-          border-left: 1px solid rgba(0, 0, 0, 0.1);
-          border-right: 1px solid rgba(0, 0, 0, 0.1);
-          //line-height: $navbar-height;
-          width: $navbar-menu-toggle-btn-width;
-
-          &.active {
-            background-color: rgba(0, 0, 0, 0.2);
-          }
-        }
-      }
-    }
   }
 
   .navbar-items {
