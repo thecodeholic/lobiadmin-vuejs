@@ -1,6 +1,6 @@
 <template>
   <div>
-    <i v-if="icon" class="fa menu-item-icon" :class="'fa-'+icon"></i>
+    <font-awesome-icon class="menu-item-icon" :icon="['fas', icon]"/>
     <span class="inner-text">{{name}}</span>
     <span v-if="badge" class="badge-wrapper">
         <span class="badge" :class="badgeClasses">{{badge}}</span>

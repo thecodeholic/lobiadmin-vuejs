@@ -19,7 +19,7 @@ const router = new Router({
     },
     {
       path: '/',
-      redirect: '/departments',
+      redirect: '/dashboard',
       component: DefaultLayout,
       children: []
     },
@@ -31,20 +31,20 @@ const router = new Router({
   ]
 });
 
-router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    // this route requires auth, check if logged in
-    // if not, redirect to login page.
-    if (!auth.loggedIn()) {
-      next({path: '/login'})
-    } else {
-      next()
-    }
-  } else if (to.matched.some(record => record.meta.guest) && auth.loggedIn()) {
-    next({path: '/'})
-  } else {
-    next() // make sure to always call next()!
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some(record => record.meta.requiresAuth)) {
+//     // this route requires auth, check if logged in
+//     // if not, redirect to login page.
+//     if (!auth.loggedIn()) {
+//       next({path: '/login'})
+//     } else {
+//       next()
+//     }
+//   } else if (to.matched.some(record => record.meta.guest) && auth.loggedIn()) {
+//     next({path: '/'})
+//   } else {
+//     next() // make sure to always call next()!
+//   }
+// });
 
 export default router;

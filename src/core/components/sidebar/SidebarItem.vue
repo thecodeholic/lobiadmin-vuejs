@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import SidebarItemContent from './MenuItemContent'
+import SidebarItemContent from './SidebarItemContent'
 
 export default {
   name: "SidebarItem",

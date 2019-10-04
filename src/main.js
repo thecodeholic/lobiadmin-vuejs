@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './shared/router';
-// import i18n from './shared/i18n';
+import i18n from './shared/i18n';
+import './modules/modules.js';
 import './plugins/bootstrap-vue/index';
 import './plugins/font-awesome/index';
 import './index.scss';
@@ -14,7 +15,7 @@ Vue.config.productionTip = false;
 
 
 new Vue({
-  // i18n,
+  i18n,
   router,
   render: h => h(App)
 }).$mount('#app');
