@@ -14,6 +14,7 @@
       </template>
     </a>
     <ul :style="subItemsStyle" v-if="children && children.length">
+      <pre>{{children}}</pre>
       <sidebar-item v-for="(childItem, i) in children"
                     :to="childItem.url"
                     :name="childItem.name"
@@ -66,7 +67,6 @@ export default {
   },
   methods: {
     toggleItem () {
-      console.log("1111")
       if (this.children && this.children.length) {
         this.opened = !this.opened
       }

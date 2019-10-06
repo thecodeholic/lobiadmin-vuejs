@@ -23,4 +23,4 @@ tmpRoutes.forEach((obj) => {
 
 router.addRoutes([route]);
 
-MenuService.addMenuItem(new MenuItem('/dashboard', i18n.t('Dashboard'), 1, ['fas', 'tachometer-alt']));
+MenuService.addItem(new MenuItem('/dashboard', i18n.t('Dashboard'), 1, ['fas', 'tachometer-alt']));

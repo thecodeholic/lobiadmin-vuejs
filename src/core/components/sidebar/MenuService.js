@@ -6,14 +6,18 @@ class MenuService {
    */
   menuItems = [];
 
-  addMenuItem(menuItem) {
-    if (!(menuItem instanceof MenuItem)){
+  addItem(menuItem) {
+    if (!(menuItem instanceof MenuItem)) {
       throw new Error("addMenuItem accepts MenuItem class instance only")
     }
     this.menuItems.push(menuItem);
   }
 
-  getItems(){
+  getItem(path) {
+    return this.menuItems.find(item => item.path === path);
+  }
+
+  getItems() {
     return this.menuItems.sort((a, b) => a.weight - b.weight);
   }
 
