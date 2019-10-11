@@ -4,7 +4,6 @@ import auth from './../core/services/auth.service'
 import DefaultLayout from "./../core/components/layout/DefaultLayout/DefaultLayout";
 import AuthLayout from "./../core/components/layout/AuthLayout/AuthLayout";
 import NotFoundComponent from "./../core/components/pages/NotFoundComponent";
-
 Vue.use(Router);
 
 const router = new Router({
