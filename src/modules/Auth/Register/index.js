@@ -1,13 +1,13 @@
 import router from '../../../shared/router'
-import Login from "./Login";
+import Register from "./Register";
 
 let {routes} = router.options;
 const mainRoute = routes.find(r => r.name === 'auth');
 
 mainRoute.children.push(
     {
-      path: 'login',
-      component: Login,
+      path: 'register',
+      component: Register,
     }
 );
 

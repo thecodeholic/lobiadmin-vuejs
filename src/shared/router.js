@@ -12,9 +12,14 @@ const router = new Router({
   routes: [
     {
       path: '/auth',
+      name: 'auth',
       redirect: '/login',
       component: AuthLayout,
       children: []
+    },
+    {
+      path: '/login',
+      redirect: '/auth/login'
     },
     {
       path: '/',

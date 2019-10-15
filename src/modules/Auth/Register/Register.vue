@@ -8,21 +8,34 @@
               <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
               <h3>Welcome</h3>
               <p>You are 30 seconds away from earning your own money!</p>
-              <router-link class="btn btn-light btn-secondary btn-block" to="/auth/register">Register</router-link>
+              <router-link class="btn btn-light btn-secondary btn-block" to="/auth/login">Login</router-link>
             </div>
           </div>
           <div class="col-md-8 col-right">
             <div class="login-right clearfix">
-              <h3 class="login-heading">Login to your account</h3>
+              <h3 class="login-heading">Create an account</h3>
               <br>
               <div class="login-form">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Username" value=""/>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Firstname"/>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Lastname"/>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Email"/>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" placeholder="Password"/>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control" placeholder="Confirm Password"/>
+                    </div>
+                    <button class="btn btn-primary btn-action">Register</button>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <input type="password" class="form-control" placeholder="Password" value=""/>
-                </div>
-                <button class="btn btn-primary btn-action">Login</button>
               </div>
             </div>
           </div>
@@ -59,7 +72,7 @@
   }
 
   .login {
-    width: 680px;
+    width: 740px;
     margin: 0 auto;
     display: flex;
     align-items: center;

@@ -12,5 +12,9 @@
 </script>
 
 <style lang="scss" scoped>
-
+  #auth-layout{
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
 </style>
