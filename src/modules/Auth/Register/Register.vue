@@ -53,6 +53,8 @@
 
 <style scoped lang="scss">
 
+  @import "../../../core/scss/variables";
+
   @-webkit-keyframes mover {
     0% {
       transform: translateY(0);
@@ -80,7 +82,7 @@
 
   .form-wrapper {
     padding: 50px;
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: -webkit-linear-gradient(left, $primary, $cyan);
   }
 
   .btn-secondary {

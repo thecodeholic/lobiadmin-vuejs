@@ -22,7 +22,7 @@
                 <div class="form-group">
                   <input type="password" class="form-control" placeholder="Password" value=""/>
                 </div>
-                <button class="btn btn-primary btn-action">Login</button>
+                <button class="btn btn-primary btn-action" @click="onLoginClick()">Login</button>
               </div>
             </div>
           </div>
@@ -34,11 +34,17 @@
 
 <script>
   export default {
-    name: "Login"
+    name: "Login",
+    methods: {
+      onLoginClick() {
+        this.$router.push('/')
+      }
+    }
   }
 </script>
 
 <style scoped lang="scss">
+  @import "../../../core/scss/variables";
 
   @-webkit-keyframes mover {
     0% {
@@ -67,7 +73,7 @@
 
   .form-wrapper {
     padding: 50px;
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: -webkit-linear-gradient(left, $primary, $primary);
   }
 
   .btn-secondary {

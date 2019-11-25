@@ -31,7 +31,7 @@
             <b class="caret"></b>
           </template>
           <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+          <b-dropdown-item @click="onLogoutClick()" href="#">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
     </div>
@@ -384,7 +384,11 @@
         ]
       }
     },
-    methods: {}
+    methods: {
+      onLogoutClick(){
+        this.$router.push('/auth/login');
+      }
+    }
   }
 </script>
 
