@@ -36,7 +36,9 @@
     "sass-loader": "^8.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "http-proxy": ">=1.18.1",
+    "acorn": ">=6.4.1"
   },
   "eslintConfig": {
     "root": true,
