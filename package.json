@@ -41,7 +41,7 @@
     "acorn": ">=6.4.1",
     "websocket-extensions": ">=0.1.4",
     "yargs-parser": ">=13.1.2",
-    "minimist": ">=1.2.3",
+    "minimist": ">=1.2.6",
     "kind-of": ">=6.0.3"
   },
   "eslintConfig": {
